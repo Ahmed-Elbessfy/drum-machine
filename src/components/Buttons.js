@@ -16,6 +16,8 @@ class Buttons extends Component {
     let audio = e.target.children[0]
     // call play sound function
     this.playAudio(audio)
+    // pass button id to display prop
+    this.props.display(e.target.id)
   }
 
   componentDidMount(){
@@ -26,6 +28,11 @@ class Buttons extends Component {
         //get audio with id equals to matching letter clicked on keyboard
         let audio = document.querySelector(`#${String.fromCharCode(e.keyCode)}`)
         this.playAudio(audio)
+        // get sound from button element which is a parent of audio element with id equals to matching letter clicked on keyboard
+        let display =  document.querySelector(`#${String.fromCharCode(e.keyCode)}`).parentElement.id
+        // pass sound to display prop
+        this.props.display(display)
+    
       }
     })
   }

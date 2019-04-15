@@ -65,12 +65,21 @@ class App extends Component {
         },
       ]
     }
+    this.displaySound = this.displaySound.bind(this)
   }
+
+  displaySound(sound){
+    this.setState({
+      display : sound
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <div className='drum-machine'>
-          <Buttons btnsData = {this.state.btnsData} />
+          <p id='display'>{this.state.display}</p>
+          <Buttons btnsData = {this.state.btnsData} display={this.displaySound} />
         </div>
       </div>
     );
