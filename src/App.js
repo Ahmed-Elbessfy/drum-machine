@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
+import Buttons from './components/Buttons'
 class App extends Component {
   constructor(props){
     super(props);
@@ -68,6 +69,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className='drum-machine'>
+          <Buttons btnsData = {this.state.btnsData} />
+        </div>
       </div>
     );
   }
