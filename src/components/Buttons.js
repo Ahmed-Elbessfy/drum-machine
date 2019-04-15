@@ -12,27 +12,32 @@ class Buttons extends Component {
   }
   // onClick function
   handleClick = (e) => {
-    // get audio child element from clicked button
-    let audio = e.target.children[0]
-    // call play sound function
-    this.playAudio(audio)
-    // pass button id to display prop
-    this.props.display(e.target.id)
+    // check if app is active or not
+    if(this.props.activeState){
+      // get audio child element from clicked button
+      let audio = e.target.children[0]
+      // call play sound function
+      this.playAudio(audio)
+      // pass button id to display prop
+      this.props.display(e.target.id)
+    }
   }
 
   componentDidMount(){
     // add event listener for keyboard clicks
     document.addEventListener('keydown', (e) => {
-      // add event listener only if the clicked button is within a set of buttons
-      if ([81,87,69,65,83,68,90,88,67].indexOf(e.keyCode) !== -1){
-        //get audio with id equals to matching letter clicked on keyboard
-        let audio = document.querySelector(`#${String.fromCharCode(e.keyCode)}`)
-        this.playAudio(audio)
-        // get sound from button element which is a parent of audio element with id equals to matching letter clicked on keyboard
-        let display =  document.querySelector(`#${String.fromCharCode(e.keyCode)}`).parentElement.id
-        // pass sound to display prop
-        this.props.display(display)
-    
+    // check if app is active or not
+      if(this.props.activeState){
+        // add event listener only if the clicked button is within a set of buttons
+        if ([81,87,69,65,83,68,90,88,67].indexOf(e.keyCode) !== -1){
+          //get audio with id equals to matching letter clicked on keyboard
+          let audio = document.querySelector(`#${String.fromCharCode(e.keyCode)}`)
+          this.playAudio(audio)
+          // get sound from button element which is a parent of audio element with id equals to matching letter clicked on keyboard
+          let display =  document.querySelector(`#${String.fromCharCode(e.keyCode)}`).parentElement.id
+          // pass sound to display prop
+          this.props.display(display)
+        }
       }
     })
   }

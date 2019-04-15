@@ -65,7 +65,8 @@ class App extends Component {
         },
       ]
     }
-    this.displaySound = this.displaySound.bind(this)
+    this.displaySound = this.displaySound.bind(this);
+    this.toggleActive = this.toggleActive.bind(this)
   }
 
   displaySound(sound){
@@ -74,12 +75,19 @@ class App extends Component {
     })
   }
 
+  toggleActive(){
+    this.setState({
+      active : !this.state.active
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <div className='drum-machine'>
+          <button onClick={this.toggleActive}><span>on</span><span>off</span></button>
           <p id='display'>{this.state.display}</p>
-          <Buttons btnsData = {this.state.btnsData} display={this.displaySound} />
+          <Buttons btnsData = {this.state.btnsData} display={this.displaySound} activeState={this.state.active} />
         </div>
       </div>
     );
