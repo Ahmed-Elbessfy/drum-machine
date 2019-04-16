@@ -83,14 +83,10 @@ class App extends Component {
 
   render() {
     const onStyle = {
-      // opacity : this.state.active ? '1' : '0.5'
-      // color: this.state.active ? '#b4d0d6' : '#374c50'
       color: this.state.active ? '#d4d4d4' : '#374c50',
       borderRight : '2px solid #d4d4d4',
     }
     const offStyle = {
-      // opacity : this.state.active ? '0.5' : '1'
-      // color: this.state.active ? '#374c50' : '#b4d0d6'
       color: this.state.active ? '#374c50' : '#d4d4d4'
     }
     return (
