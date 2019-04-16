@@ -82,10 +82,21 @@ class App extends Component {
   }
 
   render() {
+    const onStyle = {
+      // opacity : this.state.active ? '1' : '0.5'
+      // color: this.state.active ? '#b4d0d6' : '#374c50'
+      color: this.state.active ? '#d4d4d4' : '#374c50',
+      borderRight : '2px solid #d4d4d4',
+    }
+    const offStyle = {
+      // opacity : this.state.active ? '0.5' : '1'
+      // color: this.state.active ? '#374c50' : '#b4d0d6'
+      color: this.state.active ? '#374c50' : '#d4d4d4'
+    }
     return (
       <div className="App">
         <div className='drum-machine'>
-          <button onClick={this.toggleActive}><span>on</span><span>off</span></button>
+          <button onClick={this.toggleActive} className='toggleActive'><span style={onStyle}>on</span><span style={offStyle}>off</span></button>
           <p id='display'>{this.state.display}</p>
           <Buttons btnsData = {this.state.btnsData} display={this.displaySound} activeState={this.state.active} />
         </div>

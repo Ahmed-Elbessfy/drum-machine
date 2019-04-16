@@ -43,11 +43,25 @@ class Buttons extends Component {
   }
 
   render() {
+    const btnsContainer = {
+      display : 'grid',
+      gridTemplateColumns : 'repeat(3 , 1fr)',
+      gridGap : '5px',
+    }
+    const btnStyle = {
+      minWidth: '4rem',
+      minHeight: '4rem',
+      border:'5px outset #5a6a6d',
+      color: '#d4d4d4',
+      background : '#3e565b',
+      fontSize : '1.5rem',
+      fontWeight: '700',
+    }
     return (
-      <div>
+      <div style={btnsContainer} >
         {this.props.btnsData.map(btn => {
             return (
-              <button  key={btn.key} className='drum-pad' id={btn.sound} onClick={this.handleClick}>
+              <button style={btnStyle} key={btn.key} className='drum-pad' id={btn.sound} onClick={this.handleClick} >
                 {btn.id}
                 <audio src={btn.audioSrc} className='clip' id={btn.id} />
               </button>

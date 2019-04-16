@@ -1,0 +1,36 @@
+.drum-machine {
+  width: 90%;
+  max-width: 40rem;
+  margin: 15rem auto;
+  padding: 0.5rem;
+  background: #0000001c;
+  text-align: center;
+}
+
+.toggleActive {
+  width: 6rem;
+  margin: 0.7rem;
+  border: none;
+}
+
+.toggleActive span {
+  display: inline-block;
+  width: 50%;
+  padding: 5px;
+  background: #3e565b;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#display {
+  width: 12rem;
+  height: 2.6rem;
+  margin: 0.7rem auto;
+  border: 2px solid #34565b;
+  background: #d6f2f63b;
+  color: #3e565b;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  font-weight: 600;
+}

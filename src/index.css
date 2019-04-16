@@ -10,9 +10,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  font-size: 15px;
+  background: url('https://cdn.pixabay.com/photo/2015/05/11/17/47/music-762842_960_720.jpg') center right no-repeat;
+  background-size: cover;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
