@@ -22,7 +22,7 @@ class Buttons extends Component {
       // remove display value after 2 sec. by sending empty string through display prop
       setTimeout(() => {
         this.props.display("");
-      }, 2000);
+      }, 4000);
     }
   };
 
@@ -47,7 +47,7 @@ class Buttons extends Component {
           // remove display value after 2 sec. by sending empty string through display prop
           setTimeout(() => {
             this.props.display("");
-          }, 2000);
+          }, 4000);
         }
       }
     });
