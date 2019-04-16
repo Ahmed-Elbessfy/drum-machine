@@ -20,13 +20,17 @@ class Buttons extends Component {
       this.playAudio(audio)
       // pass button id to display prop
       this.props.display(e.target.id)
+      // remove display value after 2 sec. by sending empty string through display prop
+      setTimeout( () => {
+        this.props.display("")
+      },2000)
     }
   }
-
+  
   componentDidMount(){
     // add event listener for keyboard clicks
     document.addEventListener('keydown', (e) => {
-    // check if app is active or not
+      // check if app is active or not
       if(this.props.activeState){
         // add event listener only if the clicked button is within a set of buttons
         if ([81,87,69,65,83,68,90,88,67].indexOf(e.keyCode) !== -1){
@@ -37,6 +41,10 @@ class Buttons extends Component {
           let display =  document.querySelector(`#${String.fromCharCode(e.keyCode)}`).parentElement.id
           // pass sound to display prop
           this.props.display(display)
+          // remove display value after 2 sec. by sending empty string through display prop
+          setTimeout( () => {
+            this.props.display("")
+          },2000)
         }
       }
     })
