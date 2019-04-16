@@ -9,6 +9,14 @@ class Buttons extends Component {
     // play audio
     audio.play();
   };
+  // click style effect
+  clickStyle(button){
+    button.style.transform = "scale(1.05)";
+    setTimeout(() => {
+      button.style.transform = "scale(1)";
+    }, 100);
+
+  }
   // onClick function
   handleClick = e => {
     // check if app is active or not
@@ -23,9 +31,11 @@ class Buttons extends Component {
       setTimeout(() => {
         this.props.display("");
       }, 4000);
+      // add click style effect on click
+      this.clickStyle(e.target)
     }
   };
-
+  
   componentDidMount() {
     // add event listener for keyboard clicks
     document.addEventListener("keydown", e => {
@@ -48,6 +58,12 @@ class Buttons extends Component {
           setTimeout(() => {
             this.props.display("");
           }, 4000);
+          // get button with id equals to matching letter clicked on keyboard
+          let button = document.querySelector(
+            `#${String.fromCharCode(e.keyCode)}`
+          ).parentElement;
+          // add click style effect on click
+          this.clickStyle(button)
         }
       }
     });

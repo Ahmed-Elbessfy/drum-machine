@@ -16,3 +16,7 @@ body {
     center right no-repeat;
   background-size: cover;
 }
+
+button{
+  outline : none
+}
